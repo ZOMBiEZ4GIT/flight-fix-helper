@@ -2,7 +2,8 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Plane } from "lucide-react";
+import { Plane, Coffee, Bitcoin } from "lucide-react";
+import DonationBanner from "./DonationBanner";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
@@ -40,6 +41,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         </div>
       </nav>
 
+      <DonationBanner />
+
       <main className="pt-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -52,12 +55,34 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
       <footer className="mt-16 bg-white border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="text-center text-sm text-gray-500">
-            <p className="mb-4">
+          <div className="text-center space-y-6">
+            <div className="flex justify-center space-x-6">
+              <a
+                href="https://www.buymeacoffee.com/yourusername"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center text-gray-600 hover:text-primary transition-colors"
+              >
+                <Coffee className="h-5 w-5 mr-2" />
+                <span>Buy me a coffee</span>
+              </a>
+              <a
+                href="bitcoin:YourBitcoinAddress"
+                className="flex items-center text-gray-600 hover:text-primary transition-colors"
+              >
+                <Bitcoin className="h-5 w-5 mr-2" />
+                <span>Donate Bitcoin</span>
+              </a>
+            </div>
+            <p className="text-sm text-gray-500">
               Disclaimer: This website provides general information and is not legal advice.
               For specific legal advice, please consult a qualified professional.
             </p>
-            <p>© {new Date().getFullYear()} FlightRights.nz - All rights reserved.</p>
+            <p className="text-sm text-gray-500">© {new Date().getFullYear()} FlightRights.nz - All rights reserved.</p>
+            <p className="text-sm text-gray-500">
+              This is a free service run without ads to help New Zealanders claim their consumer rights. 
+              If you found this helpful, please consider supporting the hosting costs.
+            </p>
           </div>
         </div>
       </footer>
