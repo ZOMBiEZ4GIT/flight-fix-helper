@@ -4,6 +4,16 @@ import { PlaneTakeoff, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Home = () => {
+  const scrollToForm = () => {
+    const formElement = document.getElementById("claim-form");
+    if (formElement) {
+      formElement.scrollIntoView({ 
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+  };
+
   return (
     <div className="w-full">
       <section className="relative overflow-hidden bg-gradient-to-b from-primary/5 to-transparent">
@@ -23,9 +33,7 @@ const Home = () => {
               </p>
               <Button
                 className="bg-primary text-white hover:bg-primary/90 text-lg px-8 py-6 h-auto"
-                onClick={() => {
-                  document.getElementById("claim-form")?.scrollIntoView({ behavior: "smooth" });
-                }}
+                onClick={scrollToForm}
               >
                 Start Your Claim <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -35,7 +43,7 @@ const Home = () => {
         <div className="absolute inset-0 z-0 pointer-events-none animated-gradient" />
       </section>
 
-      <section id="claim-form" className="py-16 md:py-24">
+      <section id="claim-form" className="py-16 md:py-24 scroll-mt-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="glass-card rounded-2xl p-8 md:p-12">
             <div className="flex items-center space-x-3 mb-8">
