@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { PlaneTakeoff, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ClaimForm from "@/components/ClaimForm";
 
 const Home = () => {
   const scrollToForm = () => {
@@ -53,10 +54,7 @@ const Home = () => {
               <h2 className="text-2xl font-semibold text-gray-900">Compensation Claim Form</h2>
             </div>
             
-            {/* Form implementation coming in the next update */}
-            <p className="text-gray-600 text-center py-12">
-              Form component will be implemented in the next step
-            </p>
+            <ClaimForm />
           </div>
         </div>
       </section>
