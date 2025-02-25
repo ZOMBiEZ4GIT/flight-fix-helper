@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Rights from "./pages/Rights";
+import Airlines from "./pages/Airlines";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -21,6 +22,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/rights" element={<Rights />} />
+            <Route path="/airlines" element={<Airlines />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>

@@ -36,6 +36,14 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               >
                 Your Rights
               </Link>
+              <Link
+                to="/airlines"
+                className={`text-sm font-medium transition-colors hover:text-primary ${
+                  location.pathname === "/airlines" ? "text-primary" : "text-gray-600"
+                }`}
+              >
+                Airlines
+              </Link>
             </div>
           </div>
         </div>
