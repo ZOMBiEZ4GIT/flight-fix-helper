@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Shield, Info, AlertCircle, Clock, CreditCard, Scale } from "lucide-react";
 import {
@@ -102,10 +101,6 @@ const Rights = () => {
               <span className="mr-2">•</span>
               Consumer Guarantees Act
             </li>
-            <li className="flex items-start">
-              <span className="mr-2">•</span>
-              Contract & Commercial Law Act
-            </li>
           </ul>
         </motion.div>
       </div>
@@ -175,7 +170,7 @@ const Rights = () => {
                 <ul className="space-y-2 text-gray-600">
                   <li>Full refund or alternative flight</li>
                   <li>Compensation up to 10x ticket value</li>
-                  <li>Coverage for additional expenses</li>
+                  <li>Coverage for additional expenses (Uber, taxi to home/destination)</li>
                 </ul>
               </AccordionContent>
             </AccordionItem>

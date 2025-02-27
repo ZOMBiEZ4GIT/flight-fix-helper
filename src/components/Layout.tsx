@@ -3,7 +3,6 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Plane, Coffee, Bitcoin } from "lucide-react";
-import DonationBanner from "./DonationBanner";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
@@ -19,7 +18,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 <span className="text-lg font-semibold">FlightRights.nz</span>
               </Link>
             </div>
-            <div className="flex items-center space-x-8">
+            <div className="hidden md:flex items-center space-x-6 md:space-x-8">
               <Link
                 to="/"
                 className={`text-sm font-medium transition-colors hover:text-primary ${
@@ -45,11 +44,37 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 Airlines
               </Link>
             </div>
+            <div className="md:hidden flex items-center">
+              <div className="flex space-x-4">
+                <Link
+                  to="/"
+                  className={`text-xs font-medium transition-colors hover:text-primary ${
+                    location.pathname === "/" ? "text-primary" : "text-gray-600"
+                  }`}
+                >
+                  Letter
+                </Link>
+                <Link
+                  to="/rights"
+                  className={`text-xs font-medium transition-colors hover:text-primary ${
+                    location.pathname === "/rights" ? "text-primary" : "text-gray-600"
+                  }`}
+                >
+                  Rights
+                </Link>
+                <Link
+                  to="/airlines"
+                  className={`text-xs font-medium transition-colors hover:text-primary ${
+                    location.pathname === "/airlines" ? "text-primary" : "text-gray-600"
+                  }`}
+                >
+                  Airlines
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
-
-      <DonationBanner />
 
       <main className="pt-16">
         <motion.div

@@ -18,19 +18,19 @@ const Home = () => {
   return (
     <div className="w-full">
       <section className="relative overflow-hidden bg-gradient-to-b from-primary/5 to-transparent">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
           <div className="text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
                 Claim Your Flight Compensation
               </h1>
-              <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-                Get the compensation you deserve for flight delays and cancellations in New Zealand.
-                Generate a professional claim letter in minutes.
+              <p className="text-lg md:text-xl text-gray-600 mb-6 max-w-2xl mx-auto">
+                Generate a letter for NZ airlines when your flight is delayed or cancelled.
+                Get the compensation you deserve.
               </p>
               <Button
                 className="bg-primary text-white hover:bg-primary/90 text-lg px-8 py-6 h-auto"
@@ -44,9 +44,9 @@ const Home = () => {
         <div className="absolute inset-0 z-0 pointer-events-none animated-gradient" />
       </section>
 
-      <section id="claim-form" className="py-16 md:py-24 scroll-mt-20">
+      <section id="claim-form" className="py-8 md:py-12 scroll-mt-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="glass-card rounded-2xl p-8 md:p-12">
+          <div className="glass-card rounded-2xl p-8 md:p-12 shadow-lg">
             <div className="flex items-center space-x-3 mb-8">
               <div className="bg-primary/10 rounded-full p-2">
                 <PlaneTakeoff className="h-6 w-6 text-primary" />
