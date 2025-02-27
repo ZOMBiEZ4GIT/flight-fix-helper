@@ -4,10 +4,8 @@ import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import {
-  Card,
-  CardContent,
-} from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
+import DonationBanner from "@/components/DonationBanner";
 
 interface ClaimFormData {
   firstName: string;
@@ -23,6 +21,7 @@ interface ClaimFormData {
 
 const ClaimForm = () => {
   const [generatedLetter, setGeneratedLetter] = useState<string>("");
+  const [showDonation, setShowDonation] = useState<boolean>(false);
   const { register, handleSubmit, formState: { errors } } = useForm<ClaimFormData>();
 
   const generateClaimLetter = (data: ClaimFormData) => {
@@ -53,10 +52,17 @@ Best regards,
 ${data.firstName} ${data.lastName}`;
 
     setGeneratedLetter(letter);
+    setShowDonation(true);
+  };
+
+  const closeDonationBanner = () => {
+    setShowDonation(false);
   };
 
   return (
     <div className="space-y-8">
+      <DonationBanner isVisible={showDonation} onClose={closeDonationBanner} />
+      
       <form onSubmit={handleSubmit(generateClaimLetter)} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-2">
