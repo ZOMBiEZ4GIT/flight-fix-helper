@@ -20,7 +20,7 @@ const DonationBanner = ({ isVisible, onClose }: DonationBannerProps) => {
           transition={{ duration: 0.3 }}
           className="fixed top-16 inset-x-0 z-50 px-4"
         >
-          <div className="max-w-3xl mx-auto bg-[#E5DEFF] border border-primary/20 rounded-lg shadow-md">
+          <div className="max-w-3xl mx-auto bg-primary/10 border border-primary/20 rounded-lg shadow-md">
             <div className="p-6 relative">
               <button
                 onClick={onClose}
