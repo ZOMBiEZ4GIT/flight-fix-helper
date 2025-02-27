@@ -14,13 +14,13 @@ const DonationBanner = ({ isVisible, onClose }: DonationBannerProps) => {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          initial={{ opacity: 0, y: -50 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -50 }}
+          exit={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.3 }}
-          className="fixed top-16 inset-x-0 z-50 px-4"
+          className="absolute inset-0 z-50 flex items-center justify-center bg-black/20"
         >
-          <div className="max-w-3xl mx-auto bg-green-50 border border-primary/20 rounded-lg shadow-md">
+          <div className="max-w-3xl w-full mx-auto bg-green-50 border border-primary/20 rounded-lg shadow-md m-4">
             <div className="p-6 relative">
               <button
                 onClick={onClose}

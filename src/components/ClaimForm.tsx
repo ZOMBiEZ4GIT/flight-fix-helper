@@ -156,7 +156,6 @@ ${data.firstName} ${data.lastName}`;
 
       {generatedLetter && (
         <div className="relative">
-          <DonationBanner isVisible={showDonation} onClose={closeDonationBanner} />
           <Card className="mt-8">
             <CardContent className="p-6">
               <pre className="whitespace-pre-wrap font-mono text-sm bg-gray-50 p-4 rounded-lg">
@@ -164,6 +163,7 @@ ${data.firstName} ${data.lastName}`;
               </pre>
             </CardContent>
           </Card>
+          <DonationBanner isVisible={showDonation} onClose={closeDonationBanner} />
         </div>
       )}
     </div>
