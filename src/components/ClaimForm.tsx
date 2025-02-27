@@ -61,8 +61,6 @@ ${data.firstName} ${data.lastName}`;
 
   return (
     <div className="space-y-8">
-      <DonationBanner isVisible={showDonation} onClose={closeDonationBanner} />
-      
       <form onSubmit={handleSubmit(generateClaimLetter)} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-2">
@@ -157,13 +155,16 @@ ${data.firstName} ${data.lastName}`;
       </form>
 
       {generatedLetter && (
-        <Card className="mt-8">
-          <CardContent className="p-6">
-            <pre className="whitespace-pre-wrap font-mono text-sm bg-gray-50 p-4 rounded-lg">
-              {generatedLetter}
-            </pre>
-          </CardContent>
-        </Card>
+        <div className="relative">
+          <DonationBanner isVisible={showDonation} onClose={closeDonationBanner} />
+          <Card className="mt-8">
+            <CardContent className="p-6">
+              <pre className="whitespace-pre-wrap font-mono text-sm bg-gray-50 p-4 rounded-lg">
+                {generatedLetter}
+              </pre>
+            </CardContent>
+          </Card>
+        </div>
       )}
     </div>
   );
