@@ -1,8 +1,9 @@
 
 import { motion } from "framer-motion";
-import { PlaneTakeoff, ArrowRight } from "lucide-react";
+import { PlaneTakeoff, ArrowRight, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ClaimForm from "@/components/ClaimForm";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const scrollToForm = () => {
@@ -28,9 +29,15 @@ const Home = () => {
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
                 Claim Your Flight Compensation
               </h1>
-              <p className="text-lg md:text-xl text-gray-600 mb-6 max-w-2xl mx-auto">
+              <p className="text-lg md:text-xl text-gray-600 mb-3 max-w-2xl mx-auto">
                 Generate a letter for NZ airlines when your flight is delayed or cancelled.
-                Get the compensation you deserve.
+                You may be eligible for compensation of up to <span className="font-semibold">10x the cost of your flight</span>.
+              </p>
+              <p className="text-md text-gray-600 mb-6 max-w-2xl mx-auto">
+                <Link to="/rights" className="text-primary hover:underline inline-flex items-center">
+                  <BookOpen className="h-4 w-4 mr-1" />
+                  Learn more about your passenger rights
+                </Link>
               </p>
               <Button
                 className="bg-primary text-white hover:bg-primary/90 text-lg px-8 py-6 h-auto"
