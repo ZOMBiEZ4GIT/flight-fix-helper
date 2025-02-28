@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
-import DonationBanner from "@/components/DonationBanner";
+import { useNavigate } from "react-router-dom";
 
 interface ClaimFormData {
   firstName: string;
@@ -20,8 +20,7 @@ interface ClaimFormData {
 }
 
 const ClaimForm = () => {
-  const [generatedLetter, setGeneratedLetter] = useState<string>("");
-  const [showDonation, setShowDonation] = useState<boolean>(false);
+  const navigate = useNavigate();
   const { register, handleSubmit, formState: { errors } } = useForm<ClaimFormData>();
 
   const generateClaimLetter = (data: ClaimFormData) => {
@@ -51,12 +50,8 @@ Best regards,
 
 ${data.firstName} ${data.lastName}`;
 
-    setGeneratedLetter(letter);
-    setShowDonation(true);
-  };
-
-  const closeDonationBanner = () => {
-    setShowDonation(false);
+    // Navigate to the Letter page with the generated letter content
+    navigate("/letter", { state: { letterContent: letter } });
   };
 
   return (
@@ -153,19 +148,6 @@ ${data.firstName} ${data.lastName}`;
           Generate Letter
         </Button>
       </form>
-
-      {generatedLetter && (
-        <div className="relative">
-          <Card className="mt-8">
-            <CardContent className="p-6">
-              <pre className="whitespace-pre-wrap font-mono text-sm bg-gray-50 p-4 rounded-lg">
-                {generatedLetter}
-              </pre>
-            </CardContent>
-          </Card>
-          <DonationBanner isVisible={showDonation} onClose={closeDonationBanner} />
-        </div>
-      )}
     </div>
   );
 };
