@@ -89,7 +89,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <footer className="mt-16 bg-white border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="text-center space-y-6">
-            <div className="flex justify-center space-x-6">
+            <div className="flex flex-col items-center space-y-4">
               <a
                 href="https://ko-fi.com/flightrights"
                 target="_blank"
@@ -99,13 +99,15 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 <Coffee className="h-5 w-5 mr-2" />
                 <span>Support on Ko-fi</span>
               </a>
-              <a
-                href="bitcoin:bc1qgjqxqdyk6a5hn8q2v9s2482tv0pp9zwndula35"
-                className="flex items-center text-gray-600 hover:text-primary transition-colors"
-              >
-                <Bitcoin className="h-5 w-5 mr-2" />
-                <span>Donate Bitcoin</span>
-              </a>
+              <div className="flex flex-col items-center text-gray-600">
+                <div className="flex items-center mb-1">
+                  <Bitcoin className="h-5 w-5 mr-2" />
+                  <span>Donate Bitcoin</span>
+                </div>
+                <code className="text-xs bg-gray-100 px-2 py-1 rounded select-all">
+                  bc1qgjqxqdyk6a5hn8q2v9s2482tv0pp9zwndula35
+                </code>
+              </div>
             </div>
             <p className="text-sm text-gray-500">
               Disclaimer: This website provides general information and is not legal advice.
