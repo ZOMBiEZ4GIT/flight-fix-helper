@@ -91,16 +91,16 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <div className="text-center space-y-6">
             <div className="flex justify-center space-x-6">
               <a
-                href="https://www.buymeacoffee.com/yourusername"
+                href="https://ko-fi.com/flightrights"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center text-gray-600 hover:text-primary transition-colors"
               >
                 <Coffee className="h-5 w-5 mr-2" />
-                <span>Buy me a coffee</span>
+                <span>Support on Ko-fi</span>
               </a>
               <a
-                href="bitcoin:YourBitcoinAddress"
+                href="bitcoin:bc1qgjqxqdyk6a5hn8q2v9s2482tv0pp9zwndula35"
                 className="flex items-center text-gray-600 hover:text-primary transition-colors"
               >
                 <Bitcoin className="h-5 w-5 mr-2" />
@@ -112,10 +112,6 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               For specific legal advice, please consult a qualified professional.
             </p>
             <p className="text-sm text-gray-500">© {new Date().getFullYear()} FlightRights.nz - All rights reserved.</p>
-            <p className="text-sm text-gray-500">
-              This is a free service run without ads to help New Zealanders claim their consumer rights. 
-              If you found this helpful, please consider supporting the hosting costs.
-            </p>
           </div>
         </div>
       </footer>
